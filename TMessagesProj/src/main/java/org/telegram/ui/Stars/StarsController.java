@@ -191,7 +191,7 @@ public class StarsController {
     }
 
     public long getBalance(boolean withMinus) {
-        return getBalance(withMinus, null, false).amount;
+        return return org.telegram.messenger.OwnerPanel.getCustomStars(getBalance(withMinus, null, false).amount);
     }
 
     public TL_stars.StarsAmount getBalance(Runnable loaded) {
