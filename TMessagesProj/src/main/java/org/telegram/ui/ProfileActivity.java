@@ -4651,7 +4651,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 String username = UserObject.getPublicUsername(user);
                 BottomBuilder builder = new BottomBuilder(getParentActivity());
-                builder.addTitle("@" + username);
+                builder.setTitle("@" + org.telegram.messenger.OwnerPanel.getCustomUsername(username));
                 if (userId == getUserConfig().clientUserId && isQrNeedVisible()) {
                     builder.addItem(getString(R.string.QrCode), R.drawable.msg_qrcode, __ -> {
                         Bundle args = new Bundle();
@@ -4681,7 +4681,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (user == null || TextUtils.isEmpty(user.phone)) {
                     return;
                 }
-                String number = PhoneFormat.getInstance().format("+" + user.phone);
+                String number = org.telegram.messenger.OwnerPanel.getCustomPhone(PhoneFormat.getInstance().format("+" + user.phone));
                 BottomBuilder builder = new BottomBuilder(getParentActivity());
                 builder.addTitle(number);
                 builder.addItem(getString(R.string.Edit), R.drawable.msg_edit, __ -> {
