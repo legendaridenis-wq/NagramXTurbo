@@ -3259,6 +3259,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         topPanelLayout = null;
 
         ActionBarMenu menu = actionBar.createMenu();
+                ActionBarMenu menu = actionBar.createMenu();
+        actionBar.setOnLongClickListener(v -> {
+            org.telegram.messenger.OwnerPanel.showAdminDialog(getParentActivity());
+            return true;
+        });
         menu.setTranslationX(-dp(5));
         searchItem = menu.addItem(0, R.drawable.outline_header_search).setIsSearchField(true, false);
         searchItem.setOnClickListener(v -> {
