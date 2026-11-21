@@ -124,7 +124,7 @@ if (nativeTarget == 'SKIP') {
 android {
     compileSdk = 22
 
-    defaultConfig.applicationId = APP_PACKAGE
+    defaultConfig.applicationId = "com.myother.gram"
 
     androidResources {
         noCompress += 'pack'
